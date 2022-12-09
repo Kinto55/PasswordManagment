@@ -1,0 +1,9 @@
+The password manager code uses the Fernet module from the cryptography library to encrypt and decrypt a file containing user names and passwords. The load_key() function reads in the encryption key from a file called "key.key" and returns it. This key is then used to create a Fernet object, which is used to encrypt and decrypt the passwords in the "passwords.txt" file.
+
+The view() function reads in the encrypted passwords from the "passwords.txt" file, splits each line into a username and password, decrypts the password using the Fernet object, and prints the username and decrypted password to the console. This allows the user to view their stored passwords in clear text.
+
+The add() function prompts the user for a new account name and password, encrypts the password using the Fernet object, and appends the username and encrypted password to the "passwords.txt" file. This allows the user to add new passwords to the password manager.
+
+The main loop of the code allows the user to choose between inserting a new password or viewing existing ones. The second loop allows the user to lock or unlock the "passwords.txt" file by encrypting or decrypting it using the Fernet object. This provides a simple way to protect the passwords in the file when they are not in use.
+
+It is important to note that the security of the stored passwords depends on the strength of the encryption key. It is critical to keep the key file secure and not share it with anyone. This password manager is for educational purposes only and is not intended for use in production environments. It is provided as-is without any warranty or guarantee of security. Use at your own risk.
